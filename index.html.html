@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Irebe Manzi Jean D'Amour Prince | Intore Warrior | Traditional Rwandan Dancer</title>
+    <meta name="description" content="Irebe Manzi Jean D'Amour Prince - Professional Rwandan Intore dancer, choreographer, and cultural performer. The chosen warrior of Rwandan tradition.">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- AOS Library for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #c7a252;
+            --gold-light: #e0bc7a;
+            --gold-dark: #a07e3e;
+            --ivory: #f5efe6;
+            --ivory-dark: #e2d8cc;
+            --wood-dark: #2a241e;
+            --wood-pale: #3e352c;
+            --charcoal: #1a1816;
+            --pure-black: #050404;
+            --pure-white: #ffffff;
+            --transition-smooth: all 0.6s cubic-bezier(0.25, 0.1, 0.2, 1);
+            --shadow-gold: 0 10px 30px -8px rgba(199, 162, 82, 0.2);
+        }
+
+        body {
+            background-color: var(--pure-black);
+            color: var(--ivory);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            cursor: default;
+        }
+
+        /* Custom cursor for premium feel */
+        body {
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="27" viewBox="0 0 24 27"><polygon points="2,2 22,13 14,14 12,22" fill="%23c7a252" stroke="%23ffffff" stroke-width="1"/></svg>') 4 4, auto;
+        }
+        
+        a, button, .skill-card, .gallery-card, .contact-item {
+            cursor: pointer;
+        }
+
+        /* Loading animation */
+        .loader-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--pure-black);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--wood-pale);
+            border-top: 3px solid var(--gold);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, .serif {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--gold);
+            animation: expandLine 1.2s ease-out forwards;
+        }
+        @keyframes expandLine {
+            to { width: 70px; }
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Glass navigation */
+        nav {
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            background: rgba(5, 4, 3, 0.85);
+            backdrop-filter: blur(12px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(199, 162, 82, 0.2);
+            transition: var(--transition-smooth);
+        }
+        nav.scrolled {
+            padding: 0.8rem 2rem;
+            background: rgba(5, 4, 3, 0.95);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--gold);
+        }
+        .logo span {
+            color: var(--ivory);
+            font-weight: 400;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2.2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--ivory);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            letter-spacing: 0.5px;
+            position: relative;
+        }
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s;
+        }
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 1.6rem;
+            cursor: pointer;
+            color: var(--gold);
+        }
+
+        /* Hero Section with your image */
+        .hero {
+            height: 100vh;
+            min-height: 700px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.65) 100%), url('https://i.postimg.cc/qRzLFHQ9/1.png');
+            background-size: cover;
+            background-position: center 30%;
+            background-attachment: fixed;
+            margin-top: 0;
+        }
+        .hero-content {
+            z-index: 2;
+            max-width: 900px;
+            padding: 0 1rem;
+            animation: fadeInUp 1.2s ease-out;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hero-content h1 {
+            font-size: 5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 20px rgba(0,0,0,0.6);
+            letter-spacing: 2px;
+        }
+        
+        /* Ikivugo styling with vibration animation */
+        .ikivugo {
+            font-family: 'Inter', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            max-width: 85%;
+            margin: 1.5rem auto 1rem auto;
+            padding: 1.2rem 1.8rem;
+            background: rgba(0,0,0,0.55);
+            backdrop-filter: blur(8px);
+            border-left: 4px solid var(--gold);
+            border-right: 4px solid var(--gold);
+            border-radius: 12px;
+            text-align: center;
+            color: var(--ivory-dark);
+            letter-spacing: 0.3px;
+            font-weight: 500;
+            animation: vibrate 0.3s infinite ease-in-out;
+        }
+        
+        @keyframes vibrate {
+            0% { transform: translate(0px, 0px) rotate(0deg); }
+            20% { transform: translate(-1px, 0.5px) rotate(0.2deg); }
+            40% { transform: translate(1px, -0.5px) rotate(-0.2deg); }
+            60% { transform: translate(-0.5px, 1px) rotate(0.1deg); }
+            80% { transform: translate(0.5px, -1px) rotate(-0.1deg); }
+            100% { transform: translate(0px, 0px) rotate(0deg); }
+        }
+        
+        /* Pause vibration on hover for readability */
+        .ikivugo:hover {
+            animation: none;
+            background: rgba(0,0,0,0.75);
+            border-left-color: var(--gold-light);
+            border-right-color: var(--gold-light);
+            transition: all 0.3s;
+        }
+        
+        .typed-text {
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+            color: var(--gold-light);
+            font-family: 'Cormorant Garamond', serif;
+            min-height: 80px;
+        }
+        .hero-sub {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+        .btn-gold {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--pure-black);
+            padding: 1rem 2.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 40px;
+            transition: all 0.4s;
+            border: none;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(199,162,82,0.3);
+            margin-top: 0.5rem;
+        }
+        .btn-gold:hover {
+            background: var(--gold-light);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(199,162,82,0.4);
+        }
+
+        /* About section with your profile image */
+        .about {
+            padding: 6rem 0;
+            background: var(--wood-dark);
+        }
+        .about-grid {
+            display: flex;
+            gap: 4rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .about-text {
+            flex: 2;
+        }
+        .about-text p {
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            color: #e0d6ca;
+            line-height: 1.7;
+        }
+        .highlight {
+            color: var(--gold);
+            font-weight: 600;
+        }
+        .about-image {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+        .about-image img {
+            width: 100%;
+            max-width: 320px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-gold);
+            border: 3px solid var(--gold);
+            transition: transform 0.5s;
+        }
+        .about-image img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Gallery */
+        .gallery {
+            padding: 6rem 0;
+            background: var(--charcoal);
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .gallery-card {
+            background: var(--wood-dark);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.5s;
+            transform: translateY(0);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            position: relative;
+        }
+        .gallery-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 35px rgba(0,0,0,0.4);
+        }
+        .gallery-card img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            transition: transform 0.6s;
+        }
+        .gallery-card:hover img {
+            transform: scale(1.05);
+        }
+        .gallery-card p {
+            padding: 1.2rem;
+            text-align: center;
+            font-weight: 600;
+            color: var(--gold-light);
+            background: linear-gradient(to top, var(--wood-dark), transparent);
+        }
+
+        /* Skills */
+        .skills {
+            padding: 6rem 0;
+            background: var(--wood-pale);
+        }
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+        .skill-card {
+            background: rgba(10,8,6,0.8);
+            backdrop-filter: blur(4px);
+            flex: 1;
+            min-width: 240px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border-radius: 24px;
+            border-bottom: 4px solid var(--gold);
+            transition: all 0.4s;
+            transform: translateY(0);
+        }
+        .skill-card:hover {
+            transform: translateY(-8px);
+            background: rgba(199,162,82,0.1);
+            border-bottom-color: var(--gold-light);
+        }
+        .skill-card i {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            transition: transform 0.3s;
+        }
+        .skill-card:hover i {
+            transform: scale(1.1);
+        }
+
+        /* Contact */
+        .contact {
+            padding: 6rem 0;
+            background: var(--pure-black);
+            position: relative;
+        }
+        .contact-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            justify-content: space-between;
+        }
+        .contact-info {
+            flex: 1;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.8rem;
+            transition: transform 0.3s;
+            padding: 0.5rem;
+            border-radius: 12px;
+        }
+        .contact-item:hover {
+            transform: translateX(8px);
+            background: rgba(199,162,82,0.1);
+        }
+        .contact-item i {
+            width: 45px;
+            font-size: 1.8rem;
+            color: var(--gold);
+        }
+        .contact-item a {
+            color: var(--ivory);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .contact-item a:hover {
+            color: var(--gold);
+        }
+        .social-icons {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .social-icons a {
+            color: var(--ivory);
+            font-size: 2rem;
+            transition: all 0.3s;
+        }
+        .social-icons a:hover {
+            color: var(--gold);
+            transform: translateY(-5px);
+        }
+        .quote {
+            flex: 1;
+            background: linear-gradient(135deg, var(--wood-dark), var(--charcoal));
+            padding: 2rem;
+            border-radius: 28px;
+            border-left: 5px solid var(--gold);
+            transition: transform 0.4s;
+        }
+        .quote:hover {
+            transform: scale(1.02);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #050403;
+            border-top: 1px solid rgba(199,162,82,0.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 800px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 1.2rem;
+                gap: 1.2rem;
+            }
+            .nav-links.show {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            .typed-text {
+                font-size: 1.2rem;
+            }
+            .ikivugo {
+                font-size: 0.7rem;
+                padding: 0.8rem 1rem;
+                max-width: 95%;
+            }
+            h2 {
+                font-size: 2.2rem;
+            }
+            .about-grid {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            h2:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .skills-container {
+                flex-direction: column;
+            }
+        }
+
+        /* Animation classes for AOS override */
+        [data-aos] {
+            transition-timing-function: cubic-bezier(0.25, 0.1, 0.2, 1);
+        }
+    </style>
+</head>
+<body>
+
+<div class="loader-wrapper" id="loader">
+    <div class="loader"></div>
+</div>
+
+<nav id="navbar">
+    <div class="logo">Irebe <span>| Intore Warrior</span></div>
+    <div class="menu-toggle" id="mobile-menu">
+        <i class="fas fa-bars"></i>
+    </div>
+    <ul class="nav-links" id="nav-list">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Art of Intore</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section id="home" class="hero">
+    <div class="hero-content">
+        <h1>Irebe Manzi<br>Jean D'Amour Prince</h1>
+        
+        <!-- Ikivugo with vibration -->
+        <div class="ikivugo">
+            <em>"Ndi Manzi mungeri baririmba ibimurira iz'ibigango iyamarere cyene rudasumbwa ku itabaro rudakangwa mukuzicyaha. Umunsi nahatanije amahina baje birirwa bigemba mberetse kuba umuhozi sinatinya ibyo kurutsinda rutabikangwa mpabwa isango, agatsinda umuhungu ndi amata peeeee! Mpagaze ku impinga y'umusozi ndasa umwambi umukobwa arambona ati:'Uriya musore arasa neza arakandongora'. Nkaba intore y’umukera utimiranwa umukore mu ikotaniro ry’abahizi rudashagasha nshinguka rushinguka ruboneka nduta abahizi."</em>
+        </div>
+        
+        <div class="typed-text" id="typed-text"></div>
+        <div class="hero-sub">Intore Cyane · The Chosen Warrior of Rwandan Tradition</div>
+        <a href="#contact" class="btn-gold">Summon the Warrior</a>
+    </div>
+</section>
+
+<section id="about" class="about">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-text" data-aos="fade-right">
+                <h2>Born of the First Sun</h2>
+                <p>I am <span class="highlight">Irebe Manzi Jean D'Amour Prince</span>, a professional Rwandan traditional dancer, born on <strong>September 14th</strong> — the day my elders named <strong>"the first sun."</strong> From that moment, I was recognized as a <span class="highlight">chosen keeper</span> of the <strong>Intore dance</strong>, a warrior's discipline that demands not just movement, but ancestral fire.</p>
+                <p>Intore — meaning <strong>"the chosen one"</strong> — is more than performance: it is storytelling through leaps, chest-forward power, and rhythmic precision. I have dedicated my life to preserving its purity while projecting its majesty onto global stages.</p>
+                <p>My collaborations with <strong>@Impangazi</strong> have refined my agility and warrior pride. Every step echoes centuries of Rwandan royalty, yet speaks the universal language of excellence.</p>
+            </div>
+            <div class="about-image" data-aos="fade-left">
+                <img src="https://i.postimg.cc/50gVsv7T/2.png" alt="Irebe Manzi - Intore Warrior">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="gallery" class="gallery">
+    <div class="container">
+        <h2 data-aos="fade-up">The Art of Intore</h2>
+        <p data-aos="fade-up" data-aos-delay="100">Warrior agility, royal posture, and the spiritual power of Rwandan tradition — captured with @Impangazi.</p>
+        <div class="gallery-grid">
+            <div class="gallery-card" data-aos="zoom-in" data-aos-delay="100">
+                <img src="https://i.postimg.cc/qRzLFHQ9/1.png" alt="Intore leap performance">
+                <p>⚡ The Sovereign Leap</p>
+            </div>
+            <div class="gallery-card" data-aos="zoom-in" data-aos-delay="200">
+                <img src="https://misty-bird-871.linkyhost.com/" alt="Warrior Pride">
+                <p>🛡️ Warrior Pride · Power Unbroken</p>
+            </div>
+            <div class="gallery-card" data-aos="zoom-in" data-aos-delay="300">
+                <img src="https://i.postimg.cc/NG8bH7J1/11.png" alt="Rhythm of the Drum">
+                <p>🥁 Rhythm of the Drum · Inganji Drums</p>
+            </div>
+            <div class="gallery-card" data-aos="zoom-in" data-aos-delay="400">
+                <img src="https://i.postimg.cc/L6DpNPX3/Screenshot-2026-05-08-183351.png" alt="Cultural Fusion" onerror="this.src='https://placehold.co/600x400/c7a252/1a1a1a?text=Cultural+Fusion+(Image+Not+Found)'">
+                <p>🤝 Cultural Fusion · @Impangazi Collective</p>
+            </div>
+        </div>
+        <div class="placeholder-note" style="text-align:center; margin-top:2rem; opacity:0.6; font-size:0.85rem;">
+            ⚡ Gallery powered by Intore spirit
+        </div>
+    </div>
+</section>
+
+<section id="skills" class="skills">
+    <div class="container">
+        <h2 data-aos="fade-up">Professional Arsenal</h2>
+        <div class="skills-container">
+            <div class="skill-card" data-aos="flip-left" data-aos-delay="100">
+                <i class="fas fa-drumstick-bite"></i>
+                <h3>Intore Mastery</h3>
+                <p>Traditional Rwandan Dance Specialist · 10+ years of warrior training</p>
+            </div>
+            <div class="skill-card" data-aos="flip-left" data-aos-delay="200">
+                <i class="fas fa-chalkboard-user"></i>
+                <h3>Choreography</h3>
+                <p>Ritual staging · Contemporary fusion · Solo/group Intore sequences</p>
+            </div>
+            <div class="skill-card" data-aos="flip-left" data-aos-delay="300">
+                <i class="fas fa-globe-africa"></i>
+                <h3>Cultural Performance</h3>
+                <p>Festivals · Diplomacy events · Corporate & luxury brand rituals</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="contact">
+    <div class="container">
+        <div class="contact-wrapper">
+            <div class="contact-info" data-aos="fade-right">
+                <h2>Summon the Warrior</h2>
+                <p style="margin-bottom: 2rem;">For international festivals, cultural residencies, and exclusive performances.</p>
+                <div class="contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <a href="https://wa.me/250796464087" target="_blank">+250 796 464 087</a>
+                </div>
+                <div class="contact-item">
+                    <i class="far fa-envelope"></i>
+                    <a href="mailto:jeandamourprincemanzi@gmail.com">jeandamourprincemanzi@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-instagram"></i>
+                    <a href="https://instagram.com/irebe_prince" target="_blank">@irebe_prince</a>
+                </div>
+                <div class="social-icons">
+                    <a href="https://wa.me/250796464087" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://instagram.com/irebe_prince" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="mailto:jeandamourprincemanzi@gmail.com" aria-label="Email"><i class="far fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="quote" data-aos="fade-left">
+                <i class="fas fa-quote-left" style="color: var(--gold); font-size: 2.5rem; margin-bottom: 1rem; display: block;"></i>
+                <p style="font-size: 1.3rem; line-height: 1.5;">"Intore does not follow the rhythm — the rhythm follows the chosen one. My feet speak where words cannot."</p>
+                <p style="margin-top: 1.8rem;">— Irebe Manzi Jean D'Amour Prince, <br> Intore Cyane</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>© 2025 Irebe Manzi Jean D’Amour Prince — Rwandan Intore Warrior. Culturally rooted, globally destined.</p>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    // Initialize AOS
+    AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100
+    });
+
+    // Loader
+    window.addEventListener('load', () => {
+        const loader = document.getElementById('loader');
+        setTimeout(() => {
+            loader.style.opacity = '0';
+            loader.style.visibility = 'hidden';
+        }, 500);
+    });
+
+    // Typing animation
+    const phrases = ["Intore Cyane", "The Chosen Warrior", "Guardian of Rwandan Dance", "Power & Agility"];
+    let i = 0;
+    let j = 0;
+    let currentPhrase = [];
+    let isDeleting = false;
+    const typedTextElement = document.getElementById('typed-text');
+
+    function typeEffect() {
+        const fullText = phrases[i];
+        if (isDeleting) {
+            currentPhrase = fullText.substring(0, currentPhrase.length - 1);
+        } else {
+            currentPhrase = fullText.substring(0, currentPhrase.length + 1);
+        }
+        typedTextElement.textContent = currentPhrase.join('');
+
+        let speed = isDeleting ? 60 : 120;
+
+        if (!isDeleting && currentPhrase.length === fullText.length) {
+            speed = 2000;
+            isDeleting = true;
+        } else if (isDeleting && currentPhrase.length === 0) {
+            isDeleting = false;
+            i = (i + 1) % phrases.length;
+            speed = 400;
+        }
+        setTimeout(typeEffect, speed);
+    }
+    typeEffect();
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+        const nav = document.getElementById('navbar');
+        if (window.scrollY > 50) {
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
+    });
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('mobile-menu');
+    const navList = document.getElementById('nav-list');
+    menuToggle.addEventListener('click', () => {
+        navList.classList.toggle('show');
+    });
+
+    // Smooth closing on link click
+    document.querySelectorAll('.nav-links a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if(href && href.startsWith('#')){
+                e.preventDefault();
+                const targetId = href.substring(1);
+                const target = document.getElementById(targetId);
+                if(target){
+                    target.scrollIntoView({ behavior: 'smooth' });
+                    navList.classList.remove('show');
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>
