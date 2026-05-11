@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,12 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Irebe Manzi Jean D'Amour Prince | Intore Warrior | Traditional Rwandan Dancer</title>
     <meta name="description" content="Irebe Manzi Jean D'Amour Prince - Professional Rwandan Intore dancer, choreographer, and cultural performer. The chosen warrior of Rwandan tradition.">
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome 6 -->
+    
+    <!-- Preconnect for faster font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Optimized Fonts (only essential weights) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome 6 (minified) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- AOS Library for scroll animations -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <style>
         * {
             margin: 0;
@@ -40,19 +48,9 @@
             line-height: 1.5;
             scroll-behavior: smooth;
             overflow-x: hidden;
-            cursor: default;
         }
 
-        /* Custom cursor for premium feel */
-        body {
-            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="27" viewBox="0 0 24 27"><polygon points="2,2 22,13 14,14 12,22" fill="%23c7a252" stroke="%23ffffff" stroke-width="1"/></svg>') 4 4, auto;
-        }
-        
-        a, button, .skill-card, .gallery-card, .contact-item {
-            cursor: pointer;
-        }
-
-        /* Loading animation */
+        /* Loading animation - faster fade */
         .loader-wrapper {
             position: fixed;
             top: 0;
@@ -64,29 +62,25 @@
             justify-content: center;
             align-items: center;
             z-index: 9999;
-            transition: opacity 0.8s ease, visibility 0.8s ease;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+            pointer-events: none;
         }
         .loader {
-            width: 50px;
-            height: 50px;
-            border: 3px solid var(--wood-pale);
-            border-top: 3px solid var(--gold);
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--wood-pale);
+            border-top: 2px solid var(--gold);
             border-radius: 50%;
-            animation: spin 1s linear infinite;
+            animation: spin 0.8s linear infinite;
         }
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
 
-        /* Smooth scroll */
-        html {
-            scroll-behavior: smooth;
-        }
-
         h1, h2, h3, .serif {
             font-family: 'Cormorant Garamond', serif;
-            font-weight: 600;
+            font-weight: 700;
             letter-spacing: -0.01em;
         }
 
@@ -104,7 +98,7 @@
             width: 0;
             height: 3px;
             background: var(--gold);
-            animation: expandLine 1.2s ease-out forwards;
+            animation: expandLine 0.8s ease-out forwards;
         }
         @keyframes expandLine {
             to { width: 70px; }
@@ -116,31 +110,28 @@
             padding: 0 2rem;
         }
 
-        /* Glass navigation */
+        /* Glass navigation - lighter for speed */
         nav {
-            padding: 1.2rem 2rem;
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            background: rgba(5, 4, 3, 0.85);
-            backdrop-filter: blur(12px);
+            background: rgba(5, 4, 3, 0.9);
+            backdrop-filter: blur(8px);
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
             border-bottom: 1px solid rgba(199, 162, 82, 0.2);
-            transition: var(--transition-smooth);
+            transition: padding 0.3s;
         }
         nav.scrolled {
-            padding: 0.8rem 2rem;
-            background: rgba(5, 4, 3, 0.95);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            padding: 0.6rem 2rem;
         }
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 700;
-            letter-spacing: 1px;
             font-family: 'Cormorant Garamond', serif;
             color: var(--gold);
         }
@@ -150,45 +141,30 @@
         }
         .nav-links {
             display: flex;
-            gap: 2.2rem;
+            gap: 2rem;
             list-style: none;
         }
         .nav-links a {
             color: var(--ivory);
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.3s;
-            letter-spacing: 0.5px;
-            position: relative;
-        }
-        .nav-links a:after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gold);
-            transition: width 0.3s;
-        }
-        .nav-links a:hover:after {
-            width: 100%;
+            font-size: 0.9rem;
+            transition: color 0.2s;
         }
         .nav-links a:hover {
             color: var(--gold);
         }
         .menu-toggle {
             display: none;
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             cursor: pointer;
             color: var(--gold);
         }
 
-        /* Hero Section with your image */
+        /* Hero Section - optimized background */
         .hero {
             height: 100vh;
-            min-height: 700px;
+            min-height: 650px;
             position: relative;
             display: flex;
             align-items: center;
@@ -197,19 +173,18 @@
             background: linear-gradient(135deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.65) 100%), url('https://i.postimg.cc/qRzLFHQ9/1.png');
             background-size: cover;
             background-position: center 30%;
-            background-attachment: fixed;
-            margin-top: 0;
+            background-attachment: scroll;
         }
         .hero-content {
             z-index: 2;
             max-width: 900px;
             padding: 0 1rem;
-            animation: fadeInUp 1.2s ease-out;
+            animation: fadeInUp 0.8s ease-out;
         }
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(40px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
@@ -217,95 +192,86 @@
             }
         }
         .hero-content h1 {
-            font-size: 5rem;
+            font-size: 4.5rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 20px rgba(0,0,0,0.6);
-            letter-spacing: 2px;
+            text-shadow: 2px 2px 15px rgba(0,0,0,0.5);
+            letter-spacing: 1px;
         }
         
-        /* Ikivugo styling with vibration animation */
+        /* Ikivugo styling - smoother vibration */
         .ikivugo {
             font-family: 'Inter', monospace;
-            font-size: 0.9rem;
-            line-height: 1.6;
+            font-size: 0.85rem;
+            line-height: 1.5;
             max-width: 85%;
-            margin: 1.5rem auto 1rem auto;
-            padding: 1.2rem 1.8rem;
-            background: rgba(0,0,0,0.55);
-            backdrop-filter: blur(8px);
-            border-left: 4px solid var(--gold);
-            border-right: 4px solid var(--gold);
-            border-radius: 12px;
+            margin: 1.2rem auto 0.8rem auto;
+            padding: 1rem 1.5rem;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(6px);
+            border-left: 3px solid var(--gold);
+            border-right: 3px solid var(--gold);
+            border-radius: 10px;
             text-align: center;
             color: var(--ivory-dark);
-            letter-spacing: 0.3px;
             font-weight: 500;
-            animation: vibrate 0.3s infinite ease-in-out;
+            animation: vibrateSoft 0.4s infinite ease-in-out;
         }
         
-        @keyframes vibrate {
-            0% { transform: translate(0px, 0px) rotate(0deg); }
-            20% { transform: translate(-1px, 0.5px) rotate(0.2deg); }
-            40% { transform: translate(1px, -0.5px) rotate(-0.2deg); }
-            60% { transform: translate(-0.5px, 1px) rotate(0.1deg); }
-            80% { transform: translate(0.5px, -1px) rotate(-0.1deg); }
-            100% { transform: translate(0px, 0px) rotate(0deg); }
+        @keyframes vibrateSoft {
+            0% { transform: translate(0px, 0px); }
+            25% { transform: translate(-0.8px, 0.5px); }
+            50% { transform: translate(0.8px, -0.3px); }
+            75% { transform: translate(-0.3px, 0.8px); }
+            100% { transform: translate(0px, 0px); }
         }
         
-        /* Pause vibration on hover for readability */
         .ikivugo:hover {
             animation: none;
-            background: rgba(0,0,0,0.75);
-            border-left-color: var(--gold-light);
-            border-right-color: var(--gold-light);
-            transition: all 0.3s;
+            background: rgba(0,0,0,0.8);
         }
         
         .typed-text {
-            font-size: 1.6rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+            margin: 0.5rem 0;
             color: var(--gold-light);
             font-family: 'Cormorant Garamond', serif;
-            min-height: 80px;
+            min-height: 65px;
         }
         .hero-sub {
-            font-size: 1.1rem;
+            font-size: 1rem;
             margin-bottom: 1rem;
-            max-width: 600px;
+            max-width: 500px;
             margin-left: auto;
             margin-right: auto;
-            opacity: 0.9;
+            opacity: 0.85;
         }
         .btn-gold {
             display: inline-block;
             background: var(--gold);
             color: var(--pure-black);
-            padding: 1rem 2.5rem;
+            padding: 0.8rem 2rem;
             font-weight: 700;
             text-decoration: none;
             border-radius: 40px;
-            transition: all 0.4s;
-            border: none;
+            transition: all 0.3s;
             font-family: 'Inter', sans-serif;
-            letter-spacing: 1px;
-            box-shadow: 0 5px 15px rgba(199,162,82,0.3);
-            margin-top: 0.5rem;
+            letter-spacing: 0.5px;
+            margin-top: 0.3rem;
         }
         .btn-gold:hover {
             background: var(--gold-light);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(199,162,82,0.4);
+            transform: translateY(-3px);
         }
 
-        /* About section with your profile image */
+        /* About section */
         .about {
-            padding: 6rem 0;
+            padding: 5rem 0;
             background: var(--wood-dark);
         }
         .about-grid {
             display: flex;
-            gap: 4rem;
+            gap: 3rem;
             align-items: center;
             flex-wrap: wrap;
         }
@@ -313,10 +279,10 @@
             flex: 2;
         }
         .about-text p {
-            margin-bottom: 1.2rem;
-            font-size: 1.05rem;
+            margin-bottom: 1rem;
+            font-size: 1rem;
             color: #e0d6ca;
-            line-height: 1.7;
+            line-height: 1.6;
         }
         .highlight {
             color: var(--gold);
@@ -325,15 +291,14 @@
         .about-image {
             flex: 1;
             text-align: center;
-            position: relative;
         }
         .about-image img {
             width: 100%;
-            max-width: 320px;
-            border-radius: 20px;
+            max-width: 300px;
+            border-radius: 16px;
             box-shadow: var(--shadow-gold);
-            border: 3px solid var(--gold);
-            transition: transform 0.5s;
+            border: 2px solid var(--gold);
+            transition: transform 0.3s;
         }
         .about-image img:hover {
             transform: scale(1.02);
@@ -341,94 +306,89 @@
 
         /* Gallery */
         .gallery {
-            padding: 6rem 0;
+            padding: 5rem 0;
             background: var(--charcoal);
         }
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
         .gallery-card {
             background: var(--wood-dark);
-            border-radius: 16px;
+            border-radius: 14px;
             overflow: hidden;
-            transition: all 0.5s;
-            transform: translateY(0);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            position: relative;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
         .gallery-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 20px 35px rgba(0,0,0,0.4);
+            transform: translateY(-8px);
         }
         .gallery-card img {
             width: 100%;
-            height: 320px;
+            height: 280px;
             object-fit: cover;
-            transition: transform 0.6s;
+            transition: transform 0.4s;
         }
         .gallery-card:hover img {
-            transform: scale(1.05);
+            transform: scale(1.03);
         }
         .gallery-card p {
-            padding: 1.2rem;
+            padding: 1rem;
             text-align: center;
             font-weight: 600;
             color: var(--gold-light);
-            background: linear-gradient(to top, var(--wood-dark), transparent);
         }
 
         /* Skills */
         .skills {
-            padding: 6rem 0;
+            padding: 5rem 0;
             background: var(--wood-pale);
         }
         .skills-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 2rem;
+            gap: 1.5rem;
             justify-content: center;
-            margin-top: 3rem;
+            margin-top: 2rem;
         }
         .skill-card {
-            background: rgba(10,8,6,0.8);
-            backdrop-filter: blur(4px);
+            background: rgba(10,8,6,0.85);
             flex: 1;
-            min-width: 240px;
-            padding: 2rem 1.5rem;
+            min-width: 220px;
+            padding: 1.8rem 1.2rem;
             text-align: center;
-            border-radius: 24px;
-            border-bottom: 4px solid var(--gold);
-            transition: all 0.4s;
-            transform: translateY(0);
+            border-radius: 20px;
+            border-bottom: 3px solid var(--gold);
+            transition: all 0.3s;
         }
         .skill-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-5px);
             background: rgba(199,162,82,0.1);
-            border-bottom-color: var(--gold-light);
         }
         .skill-card i {
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: var(--gold);
-            margin-bottom: 1rem;
-            transition: transform 0.3s;
+            margin-bottom: 0.8rem;
         }
-        .skill-card:hover i {
-            transform: scale(1.1);
+        .skill-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        .skill-card p {
+            font-size: 0.85rem;
         }
 
         /* Contact */
         .contact {
-            padding: 6rem 0;
+            padding: 5rem 0;
             background: var(--pure-black);
-            position: relative;
         }
         .contact-wrapper {
             display: flex;
             flex-wrap: wrap;
-            gap: 3rem;
+            gap: 2.5rem;
             justify-content: space-between;
         }
         .contact-info {
@@ -438,18 +398,17 @@
             display: flex;
             align-items: center;
             gap: 1rem;
-            margin-bottom: 1.8rem;
-            transition: transform 0.3s;
-            padding: 0.5rem;
-            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            padding: 0.4rem;
+            border-radius: 10px;
+            transition: transform 0.2s;
         }
         .contact-item:hover {
-            transform: translateX(8px);
-            background: rgba(199,162,82,0.1);
+            transform: translateX(5px);
         }
         .contact-item i {
-            width: 45px;
-            font-size: 1.8rem;
+            width: 38px;
+            font-size: 1.5rem;
             color: var(--gold);
         }
         .contact-item a {
@@ -462,49 +421,46 @@
         }
         .social-icons {
             display: flex;
-            gap: 1.5rem;
-            margin-top: 2rem;
+            gap: 1.2rem;
+            margin-top: 1.5rem;
         }
         .social-icons a {
             color: var(--ivory);
-            font-size: 2rem;
-            transition: all 0.3s;
+            font-size: 1.6rem;
+            transition: all 0.2s;
         }
         .social-icons a:hover {
             color: var(--gold);
-            transform: translateY(-5px);
+            transform: translateY(-3px);
         }
         .quote {
             flex: 1;
             background: linear-gradient(135deg, var(--wood-dark), var(--charcoal));
-            padding: 2rem;
-            border-radius: 28px;
-            border-left: 5px solid var(--gold);
-            transition: transform 0.4s;
-        }
-        .quote:hover {
-            transform: scale(1.02);
+            padding: 1.8rem;
+            border-radius: 24px;
+            border-left: 4px solid var(--gold);
         }
 
         footer {
             text-align: center;
-            padding: 2rem;
+            padding: 1.5rem;
             background: #050403;
-            border-top: 1px solid rgba(199,162,82,0.2);
+            border-top: 1px solid rgba(199,162,82,0.15);
+            font-size: 0.8rem;
         }
 
         /* Responsive */
         @media (max-width: 800px) {
             .container {
-                padding: 0 1.5rem;
+                padding: 0 1.2rem;
             }
             .nav-links {
                 display: none;
                 width: 100%;
                 flex-direction: column;
                 align-items: center;
-                padding-top: 1.2rem;
-                gap: 1.2rem;
+                padding-top: 1rem;
+                gap: 1rem;
             }
             .nav-links.show {
                 display: flex;
@@ -513,18 +469,18 @@
                 display: block;
             }
             .hero-content h1 {
-                font-size: 2.8rem;
+                font-size: 2.5rem;
             }
             .typed-text {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
             .ikivugo {
-                font-size: 0.7rem;
-                padding: 0.8rem 1rem;
-                max-width: 95%;
+                font-size: 0.65rem;
+                padding: 0.7rem 1rem;
+                max-width: 98%;
             }
             h2 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
             .about-grid {
                 flex-direction: column-reverse;
@@ -539,9 +495,9 @@
             }
         }
 
-        /* Animation classes for AOS override */
-        [data-aos] {
-            transition-timing-function: cubic-bezier(0.25, 0.1, 0.2, 1);
+        /* Lazy loading image optimization */
+        img {
+            loading: lazy;
         }
     </style>
 </head>
@@ -569,9 +525,8 @@
     <div class="hero-content">
         <h1>Irebe Manzi<br>Jean D'Amour Prince</h1>
         
-        <!-- Ikivugo with vibration -->
         <div class="ikivugo">
-            <em>"Ndi Manzi mungeri baririmba ibimurira iz'ibigango iyamarere cyene rudasumbwa ku itabaro rudakangwa mukuzicyaha. Umunsi nahatanije amahina baje birirwa bigemba mberetse kuba umuhozi sinatinya ibyo kurutsinda rutabikangwa mpabwa isango, agatsinda umuhungu ndi amata peeeee! Mpagaze ku impinga y'umusozi ndasa umwambi umukobwa arambona ati:'Uriya musore arasa neza arakandongora'. Nkaba intore y’umukera utimiranwa umukore mu ikotaniro ry’abahizi rudashagasha nshinguka rushinguka ruboneka nduta abahizi."</em>
+            <em>"Ndi Manzi mungeri baririmba ibimburira iz'ibigango iyamarere cyane rudasumbwa ku itabaro rudakangwa mukuzicyaha. Umunsi nahatanije amahina baje birirwa bigemba mberetse kuba umuhozi sinatinya ibyo kurutsinda rutabikangwa mpabwa isango. Agatsinda umuhungu ndi amata peeeee! Mpagaze ku impinga y'umusozi ndasa umwambi umukobwa arambona ati:'Uriya musore arasa neza arakandongora'. Nkaba intore y’umukera utimiranwa umukore mu ikotaniro ry’abahizi rudashagasha nshinguka Rushinguka ruboneka nduta abahizi."</em>
         </div>
         
         <div class="typed-text" id="typed-text"></div>
@@ -583,14 +538,14 @@
 <section id="about" class="about">
     <div class="container">
         <div class="about-grid">
-            <div class="about-text" data-aos="fade-right">
+            <div class="about-text">
                 <h2>Born of the First Sun</h2>
                 <p>I am <span class="highlight">Irebe Manzi Jean D'Amour Prince</span>, a professional Rwandan traditional dancer, born on <strong>September 14th</strong> — the day my elders named <strong>"the first sun."</strong> From that moment, I was recognized as a <span class="highlight">chosen keeper</span> of the <strong>Intore dance</strong>, a warrior's discipline that demands not just movement, but ancestral fire.</p>
                 <p>Intore — meaning <strong>"the chosen one"</strong> — is more than performance: it is storytelling through leaps, chest-forward power, and rhythmic precision. I have dedicated my life to preserving its purity while projecting its majesty onto global stages.</p>
                 <p>My collaborations with <strong>@Impangazi</strong> have refined my agility and warrior pride. Every step echoes centuries of Rwandan royalty, yet speaks the universal language of excellence.</p>
             </div>
-            <div class="about-image" data-aos="fade-left">
-                <img src="https://i.postimg.cc/50gVsv7T/2.png" alt="Irebe Manzi - Intore Warrior">
+            <div class="about-image">
+                <img src="https://i.postimg.cc/50gVsv7T/2.png" alt="Irebe Manzi - Intore Warrior" loading="lazy">
             </div>
         </div>
     </div>
@@ -598,47 +553,44 @@
 
 <section id="gallery" class="gallery">
     <div class="container">
-        <h2 data-aos="fade-up">The Art of Intore</h2>
-        <p data-aos="fade-up" data-aos-delay="100">Warrior agility, royal posture, and the spiritual power of Rwandan tradition — captured with @Impangazi.</p>
+        <h2>The Art of Intore</h2>
+        <p style="margin-bottom: 1rem;">Warrior agility, royal posture, and the spiritual power of Rwandan tradition — captured with @Impangazi.</p>
         <div class="gallery-grid">
-            <div class="gallery-card" data-aos="zoom-in" data-aos-delay="100">
-                <img src="https://i.postimg.cc/qRzLFHQ9/1.png" alt="Intore leap performance">
+            <div class="gallery-card">
+                <img src="https://i.postimg.cc/qRzLFHQ9/1.png" alt="Intore leap performance" loading="lazy">
                 <p>⚡ The Sovereign Leap</p>
             </div>
-            <div class="gallery-card" data-aos="zoom-in" data-aos-delay="200">
-                <img src="https://misty-bird-871.linkyhost.com/" alt="Warrior Pride">
+            <div class="gallery-card">
+                <img src="https://misty-bird-871.linkyhost.com/" alt="Warrior Pride" loading="lazy">
                 <p>🛡️ Warrior Pride · Power Unbroken</p>
             </div>
-            <div class="gallery-card" data-aos="zoom-in" data-aos-delay="300">
-                <img src="https://i.postimg.cc/NG8bH7J1/11.png" alt="Rhythm of the Drum">
+            <div class="gallery-card">
+                <img src="https://i.postimg.cc/NG8bH7J1/11.png" alt="Rhythm of the Drum" loading="lazy">
                 <p>🥁 Rhythm of the Drum · Inganji Drums</p>
             </div>
-            <div class="gallery-card" data-aos="zoom-in" data-aos-delay="400">
-                <img src="https://i.postimg.cc/L6DpNPX3/Screenshot-2026-05-08-183351.png" alt="Cultural Fusion" onerror="this.src='https://placehold.co/600x400/c7a252/1a1a1a?text=Cultural+Fusion+(Image+Not+Found)'">
+            <div class="gallery-card">
+                <img src="https://i.postimg.cc/L6DpNPX3/Screenshot-2026-05-08-183351.png" alt="Cultural Fusion" loading="lazy" onerror="this.src='https://placehold.co/600x400/c7a252/1a1a1a?text=Cultural+Fusion'">
                 <p>🤝 Cultural Fusion · @Impangazi Collective</p>
             </div>
-        </div>
-        <div class="placeholder-note" style="text-align:center; margin-top:2rem; opacity:0.6; font-size:0.85rem;">
-            ⚡ Gallery powered by Intore spirit
         </div>
     </div>
 </section>
 
 <section id="skills" class="skills">
     <div class="container">
-        <h2 data-aos="fade-up">Professional Arsenal</h2>
+        <h2>Professional Arsenal</h2>
         <div class="skills-container">
-            <div class="skill-card" data-aos="flip-left" data-aos-delay="100">
+            <div class="skill-card">
                 <i class="fas fa-drumstick-bite"></i>
                 <h3>Intore Mastery</h3>
                 <p>Traditional Rwandan Dance Specialist · 10+ years of warrior training</p>
             </div>
-            <div class="skill-card" data-aos="flip-left" data-aos-delay="200">
+            <div class="skill-card">
                 <i class="fas fa-chalkboard-user"></i>
                 <h3>Choreography</h3>
                 <p>Ritual staging · Contemporary fusion · Solo/group Intore sequences</p>
             </div>
-            <div class="skill-card" data-aos="flip-left" data-aos-delay="300">
+            <div class="skill-card">
                 <i class="fas fa-globe-africa"></i>
                 <h3>Cultural Performance</h3>
                 <p>Festivals · Diplomacy events · Corporate & luxury brand rituals</p>
@@ -650,9 +602,9 @@
 <section id="contact" class="contact">
     <div class="container">
         <div class="contact-wrapper">
-            <div class="contact-info" data-aos="fade-right">
+            <div class="contact-info">
                 <h2>Summon the Warrior</h2>
-                <p style="margin-bottom: 2rem;">For international festivals, cultural residencies, and exclusive performances.</p>
+                <p style="margin-bottom: 1.5rem;">For international festivals, cultural residencies, and exclusive performances.</p>
                 <div class="contact-item">
                     <i class="fab fa-whatsapp"></i>
                     <a href="https://wa.me/250796464087" target="_blank">+250 796 464 087</a>
@@ -671,10 +623,10 @@
                     <a href="mailto:jeandamourprincemanzi@gmail.com" aria-label="Email"><i class="far fa-envelope"></i></a>
                 </div>
             </div>
-            <div class="quote" data-aos="fade-left">
-                <i class="fas fa-quote-left" style="color: var(--gold); font-size: 2.5rem; margin-bottom: 1rem; display: block;"></i>
-                <p style="font-size: 1.3rem; line-height: 1.5;">"Intore does not follow the rhythm — the rhythm follows the chosen one. My feet speak where words cannot."</p>
-                <p style="margin-top: 1.8rem;">— Irebe Manzi Jean D'Amour Prince, <br> Intore Cyane</p>
+            <div class="quote">
+                <i class="fas fa-quote-left" style="color: var(--gold); font-size: 2rem; margin-bottom: 0.8rem; display: block;"></i>
+                <p style="font-size: 1.2rem; line-height: 1.4;">"Intore does not follow the rhythm — the rhythm follows the chosen one. My feet speak where words cannot."</p>
+                <p style="margin-top: 1.2rem;">— Irebe Manzi Jean D'Amour Prince, <br> Intore Cyane</p>
             </div>
         </div>
     </div>
@@ -682,91 +634,101 @@
 
 <footer>
     <div class="container">
-        <p>© 2025 Irebe Manzi Jean D’Amour Prince — Rwandan Intore Warrior. Culturally rooted, globally destined.</p>
+        <p>© 2026 Irebe Manzi Jean D'Amour Prince — Rwandan Intore Warrior. Culturally rooted, globally destined.</p>
+        <p># Desined by Sugira</p>
     </div>
 </footer>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    // Initialize AOS
-    AOS.init({
-        duration: 800,
-        once: true,
-        offset: 100
-    });
-
-    // Loader
-    window.addEventListener('load', () => {
+    // Optimized script - no errors
+    (function() {
+        // Hide loader faster
         const loader = document.getElementById('loader');
-        setTimeout(() => {
-            loader.style.opacity = '0';
-            loader.style.visibility = 'hidden';
-        }, 500);
-    });
-
-    // Typing animation
-    const phrases = ["Intore Cyane", "The Chosen Warrior", "Guardian of Rwandan Dance", "Power & Agility"];
-    let i = 0;
-    let j = 0;
-    let currentPhrase = [];
-    let isDeleting = false;
-    const typedTextElement = document.getElementById('typed-text');
-
-    function typeEffect() {
-        const fullText = phrases[i];
-        if (isDeleting) {
-            currentPhrase = fullText.substring(0, currentPhrase.length - 1);
-        } else {
-            currentPhrase = fullText.substring(0, currentPhrase.length + 1);
+        if (loader) {
+            setTimeout(function() {
+                loader.style.opacity = '0';
+                loader.style.visibility = 'hidden';
+            }, 300);
         }
-        typedTextElement.textContent = currentPhrase.join('');
 
-        let speed = isDeleting ? 60 : 120;
+        // Fixed typing animation (corrected .join error)
+        const phrases = ["Intore Cyane", "The Chosen Warrior", "Guardian of Rwandan Dance", "Power & Agility"];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typedTextElement = document.getElementById('typed-text');
 
-        if (!isDeleting && currentPhrase.length === fullText.length) {
-            speed = 2000;
-            isDeleting = true;
-        } else if (isDeleting && currentPhrase.length === 0) {
-            isDeleting = false;
-            i = (i + 1) % phrases.length;
-            speed = 400;
-        }
-        setTimeout(typeEffect, speed);
-    }
-    typeEffect();
-
-    // Navbar scroll effect
-    window.addEventListener('scroll', () => {
-        const nav = document.getElementById('navbar');
-        if (window.scrollY > 50) {
-            nav.classList.add('scrolled');
-        } else {
-            nav.classList.remove('scrolled');
-        }
-    });
-
-    // Mobile menu toggle
-    const menuToggle = document.getElementById('mobile-menu');
-    const navList = document.getElementById('nav-list');
-    menuToggle.addEventListener('click', () => {
-        navList.classList.toggle('show');
-    });
-
-    // Smooth closing on link click
-    document.querySelectorAll('.nav-links a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            if(href && href.startsWith('#')){
-                e.preventDefault();
-                const targetId = href.substring(1);
-                const target = document.getElementById(targetId);
-                if(target){
-                    target.scrollIntoView({ behavior: 'smooth' });
-                    navList.classList.remove('show');
-                }
+        function typeEffect() {
+            if (!typedTextElement) return;
+            
+            const currentPhrase = phrases[phraseIndex];
+            
+            if (isDeleting) {
+                charIndex--;
+            } else {
+                charIndex++;
             }
+            
+            // Use substring instead of join to avoid the error
+            let displayText = currentPhrase.substring(0, charIndex);
+            typedTextElement.textContent = displayText;
+            
+            let speed = isDeleting ? 50 : 100;
+            
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                speed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                speed = 300;
+            }
+            
+            setTimeout(typeEffect, speed);
+        }
+        
+        // Start typing animation
+        typeEffect();
+
+        // Navbar scroll effect
+        const nav = document.getElementById('navbar');
+        if (nav) {
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+            });
+        }
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+        
+        if (menuToggle && navList) {
+            menuToggle.addEventListener('click', function() {
+                navList.classList.toggle('show');
+            });
+        }
+
+        // Smooth navigation
+        const navLinks = document.querySelectorAll('.nav-links a');
+        navLinks.forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href && href.startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = href.substring(1);
+                    const target = document.getElementById(targetId);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                        if (navList) navList.classList.remove('show');
+                    }
+                }
+            });
         });
-    });
+    })();
 </script>
 </body>
 </html>
